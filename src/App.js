@@ -1,24 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+// import './App.css';
+
+import CreateData  from './redux/components/CreateData';
+import EditProduct from './redux/components/EditProduct';
+
+import {BrowserRouter,Switch, Route} from 'react-router-dom';
+
 
 function App() {
   return (
+
+<BrowserRouter>
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      
+<Switch>
+          <Route exact path="/" component={CreateData} />
+
+          {/* in given path we get our EditProduct Component */}
+
+          <Route exact path="/updateProduct/editID/:id" component={EditProduct} />
+
+  </Switch>
+    
     </div>
+    </BrowserRouter> 
+
   );
 }
 

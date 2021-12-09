@@ -4,9 +4,24 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
+// import for redux
+
+import {Provider} from "react-redux";
+import store from "./redux/store"
+import CreateData from './redux/components/CreateData';
+import DispData from './redux/components/DispData';
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+
+<Provider store={store}>
+  <App/>
+  {/* <CreateData/> */}
+</Provider>
+
+
   </React.StrictMode>,
   document.getElementById('root')
 );
